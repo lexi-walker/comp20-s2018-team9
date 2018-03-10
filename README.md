@@ -1,12 +1,12 @@
 # LifeMap
 
 ## Table of Contents
-- [Problem Statement](README.md#problem-statement)
-- [Solving the Problem](README.md#solving-the-problem)
-- [Features](README.md#features)
-- [Data](README.md#data)
-- [Algorithms and Techniques](README.md#algorithms-and-techniques)
-- [Wireframes](README.md#wireframes)
+- [Problem Statement](#problem-statement)
+- [Solving the Problem](#solving-the-problem)
+- [Features](#features)
+- [Data](#data)
+- [Algorithms and Techniques](#algorithms-and-techniques)
+- [Wireframes](#wireframes)
 
 ### Problem Statement
 College is a period of huge growth, change, and excitement. Amidst all the chaos of classes, club meetings, and exams, students tend to get wrapped up in the now, forgetting how looking at the past can influence and improve the future. Having some sort of mechanism to reflect back on their past few weeks, months, or even years would be something that could benefit the lives of all college students. Traditional calendars provide a one-dimensional view of an ordered sequence of events, which may be useful for day-to-day planning. Unfornately, traditional calendars prevent the user from viewing the data holistically to draw larger conclusions about their lifestyle that are necessary for self-improvement.
