@@ -27,6 +27,7 @@ We will use the Google Calendar API in order to collect the data for this projec
 
 #### Desktop
 Sign In Portal
+
 ![SignInView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/desktop/SignIn.png)
 
 Dashboard
