@@ -31,23 +31,18 @@ Sign In Portal
 ![SignInView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/desktop/SignIn.png)
 
 Dashboard
+
 ![DashboardView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/desktop/DashboardView.png)
 
 #### Mobile
-Sign In
 ![ConnecttoGoogleAccount](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/ConnecttoGoogleAccount.png)
 
-Select Google Calendars
 ![ConnectCalendars](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/ConnectCalendars.png)
 
-Select Weeks to Visualize
 ![SelectWeeks](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/SelectWeeks.png)
 
-Map View
 ![MapView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MapView.png)
 
-Visualization View
 ![GraphView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/GraphView.png)
 
-Navigation (Menu View)
-![MenuView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MenuView.png)
+![MenuView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MenuView.png) {: height="500px"}
