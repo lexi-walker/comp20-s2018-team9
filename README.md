@@ -45,4 +45,4 @@ Dashboard
 
 ![GraphView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/GraphView.png)
 
-![MenuView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MenuView.png) {: height="500px"}
+![MenuView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MenuView.png)
