@@ -44,3 +44,8 @@ We will use the Google Calendar API in order to collect the data for this projec
 ![GraphView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/GraphView.png)
 
 ![MenuView](https://github.com/tuftsdev/comp20-s2018-team9/blob/master/wireframes/mobile/MenuView.png)
+
+### Comments by Ming 
+* Yes please.
+* For two summers (2014 and 2015), I actually had to track my time and what I was doing.  I did this personally --because wasting time and not accomplishing anything is a terrible thing and something no one is proud of.
+* I have an idea: also plug in data from my Pi-Hole (networkwide ad blocker) to infer when I'm working, when I'm sleeping, etc. 
