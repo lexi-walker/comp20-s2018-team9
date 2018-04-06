@@ -46,3 +46,37 @@ var CLIENT_ID = '149020516136-fakiuatlt3r0te6n4lk02lqafe0l7pis.apps.googleuserco
    function handleSignoutClick(event) {
      gapi.auth2.getAuthInstance().signOut();
    }
+
+   function appendPre(message) {
+  var pre = document.getElementById('content');
+  var textContent = document.createTextNode(message + '\n');
+  pre.appendChild(textContent);
+}
+
+function listUpcomingEvents() {
+  gapi.client.calendar.events.list({
+    'calendarId': 'primary',
+    'timeMin': (new Date()).toISOString(),
+    'showDeleted': false,
+    'singleEvents': true,
+    'maxResults': 10,
+    'orderBy': 'startTime'
+  }).then(function(response) {
+    var events = response.result.items;
+    console.log(response);
+    appendPre('Upcoming events:');
+
+    if (events.length > 0) {
+      for (i = 0; i < events.length; i++) {
+        var event = events[i];
+        var when = event.start.dateTime;
+        if (!when) {
+          when = event.start.date;
+        }
+        appendPre(event.summary + ' (' + when + ')')
+      }
+    } else {
+      appendPre('No upcoming events found.');
+    }
+  });
+}
