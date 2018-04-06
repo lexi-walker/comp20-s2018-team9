@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing Bar Graphs</title>
+        <meta charset="utf-8"/>
+        <style>
+            .bar {
+                fill: steelblue;
+            }
+
+            .bar:hover {
+                fill: brown;
+            }
+
+            .axis text {
+                font: 10px sans-serif;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="chart"></svg>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+
+        <script>
+            // Initial data
+            var sleepData = [{day: "Monday",    hours: 6},  {day: "Tuesday",  hours: 4},
+                             {day: "Wednesday", hours: 7},  {day: "Thursday", hours: 5},
+                             {day: "Friday",    hours: 8},  {day: "Saturday", hours: 10},
+                             {day: "Sunday",    hours: 7}];
+
+             var weekdays = sleepData.map(function(t) {return t.day});
+
+            // Handle sizing and margins
+            var margins = {top: 20, right: 20, bottom: 30, left: 40};
+            var width = 450 - margins.right - margins.left;
+            var height = 728 - margins.top - margins.bottom;
+
+            // Scale data
+            var dayScale = d3.scale.ordinal()
+                .rangeRoundBands([0, width], .1);
+
+            var hourScale = d3.scale.linear()
+                .range([height, 0])
+
+            // Setting the axes
+            var xAxis = d3.svg.axis()
+                .scale(dayScale)
+                .orient("bottom");
+
+            var yAxis = d3.svg.axis()
+                .scale(hourScale)
+                .orient("left")
+
+            // Making the bars
+            var chart = d3.select(".chart")
+                .attr("width", width + margins.left + margins.right)
+                .attr("height", height + margins.top + margins.bottom)
+              .append("g")
+                .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+
+            dayScale.domain(sleepData.map(function(d) {return d.day;}));
+            hourScale.domain([0, d3.max(sleepData, function(d) {return d.hours})]);
+
+            chart.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
+
+            chart.append("g")
+                .attr("class", "y axis")
+                .call(yAxis);
+
+            chart.selectAll("bar")
+                .data(sleepData)
+              .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) {return dayScale(d.day)})
+                .attr("y", function(d) {return hourScale(d.hours)})
+                .attr("height", function(d) {return height - hourScale(d.hours)})
+                .attr("width", dayScale.rangeBand());
+
+            // Adding a horizontal average line
+            chart.append("line")
+                .style("stroke", "black")
+                .attr("x1", 0)
+                .attr("y1", hourScale(4.7))
+                .attr("x2", width)
+                .attr("y2", hourScale(4.7));
+
+
+        </script>
+    </body>
+</html>
