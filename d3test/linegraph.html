@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title> Line Graph Test</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+
+	<body>
+		<div class="wrap">
+			<svg id="viz" width="1000" height="700"></svg>
+
+		</div>
+
+		<script>
+			var setup = d3.select("#viz"),
+				WIDTH = 1000,
+				HEIGHT = 700,
+				MARGINS = {
+					top:20,
+					right:20,
+					bottom:20,
+					left:50
+				};
+			console.log("running");
+
+			//domain = defines max and min
+			//range = area available to plot stuff in
+			xscale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([2000,2010]);
+
+			yscale = d3.scale.linear().range([HEIGHT -MARGINS.top, MARGINS.bottom]).domain([134,2015]);
+
+			xAxis = d3.svg.axis()
+				.scale(xscale),
+
+			yAxis = d3.svg.axis()
+				.scale(yscale);
+
+			setup.append("svg:g")
+				.attr("transform", "translate(0,675)")
+				.call(xAxis);
+
+			yAxis = d3.svg.axis()
+				.scale(yscale)
+				.orient("left");
+			setup.append("svg:g")
+				.attr("transform", "translate(50,0)")
+				.call(yAxis);
+
+
+		</script>
+
+	</body>
+
+
+</html>
