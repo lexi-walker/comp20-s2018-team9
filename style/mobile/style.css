@@ -1,0 +1,14 @@
+body {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+	font-size: 30px;
+	text-align: center;
+	margin: 10px 0 5px 0;
+}
+
+#map {
+	height: 400px;
+	width: 100vw;
+}
