@@ -49,7 +49,3 @@ We will use the Google Calendar API in order to collect the data for this projec
 * Yes please.
 * For two summers (2014 and 2015), I actually had to track my time and what I was doing.  I did this personally --because wasting time and not accomplishing anything is a terrible thing and something no one is proud of.
 * I have an idea: also plug in data from my Pi-Hole (networkwide ad blocker) to infer when I'm working, when I'm sleeping, etc. 
-
-### Update: Friday, April 6, 2018
-* We are using the [Google Maps Geocoding API] (https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests) to extract latitude and longitude from a string-formatted location. 
-* Borrowing content from Assignment 2 (NotUber), we then plot these coordinates on a map, and display them.
