@@ -8,7 +8,7 @@
 
 ### Challenges Faced
 * More work must be done to come up with useful, interesting visualizations based on the data available.
-* Lots of small issues with parsing the google calendar data (such as converting the location strings to coordinates) into usable data have to be solved.
+* Lots of small issues with parsing the google calendar data (such as converting the location strings to coordinates) into usable data have to be solved. Namely, we anticipated being able to process a list of locations with one function call. However, we realized it was necessary to implement a recusive system to process the list locations one-by-one, due to the callback functions used by the request-response model.
 
 ### Goals for Next Week
 * Work on formatting the data pulled from Google Calendar so that it can be fed into the visualizations.
