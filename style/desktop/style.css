@@ -6,9 +6,24 @@ h1 {
 	font-size: 30px;
 	text-align: center;
 	margin: 10px 0 5px 0;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+}
+
+#leftmenu {
+    float: left;
+    width: 200px;
 }
 
 #map {
-	height: 400px;
-	width: 100vw;
+	height: 90vh;
+	width: auto;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#vismenu {
+    float: left;
+    width: 200px;
 }
