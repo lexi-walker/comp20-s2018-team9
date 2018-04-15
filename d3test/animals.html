@@ -4,7 +4,7 @@
        <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
   <body>
-    <svg width="400" height="200"> </svg>
+    <svg width="910" height="200"> </svg>
       <!-- <svg width="200" height="200" id="fun-drawing-area">
     </svg> -->
 <h1> hii</h1>
@@ -31,12 +31,12 @@
           return d;
         })
       .attr("x", function(d, i){
-            return i*15;
+            return i*14.7;
             })
-      .attr("y", function(d) {(200 - d*10)})
+      .attr("y", function(d) {return (198 - d*9)})
       .style("fill", "red")
-        .style("stroke", "black")
-        .style("stroke-width", 1);
+      .style("stroke", "black")
+      .style("stroke-width", 1);
     }
 
 
@@ -44,42 +44,14 @@
 
 
 
+    var theData = [ 1, 8, 3 ];
 
-
-  /* var fda = d3.select("#fun-drawing-area");
-  fda.append("circle")
-    .attr("cx", 50)
-    .attr("cy", 50)
-    .attr("r",  40)
-    .style("stroke", "red")
-    .style("stroke-width", 5)
-    .style("fill", "yellow");
-   d3.select("svg")
-    .selectAll("rect")
-    .data(animaldata)
-    .enter()
-    .append("rect")
-    .style("fill", "#FE9922")
-    .attr("width", 30)
-      .attr("height", function(d){
-      var d= d*4;
-      //console.log(d);
-      return d;
-      })
-      .style("opacity", (d,i) => i*.15)
-    .attr("x", (d,i)=> i*30)
-    .attr("y", d => 400-4*d);
-*/
-    var theData = [ 1, 8, 3 ]
-
-var p = d3.select("body").selectAll("p")
-  .data(theData)
-  .enter()
-  .append("p")
-  .text("hello ");
+    var p = d3.select("body").selectAll("p")
+      .data(theData)
+      .enter()
+      .append("p")
+      .text("hello ");
 
   </script>
-  <style>
 
-  </style>
 </html>
