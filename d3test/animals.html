@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+       <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body>
+    <svg width="400" height="200"> </svg>
+      <!-- <svg width="200" height="200" id="fun-drawing-area">
+    </svg> -->
+<h1> hii</h1>
+  </body>
+
+  <script>
+
+      var animalstorage = [];
+      var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
+        for (var i = 1; i < data.length; i++) {
+         animalstorage.push(data[i].FIELD3);
+        }
+        dataViz(animalstorage);
+      });
+    function dataViz(data) {
+      d3.select("svg")
+      .selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("width", "10")
+      .attr("height", function (d) {
+          d= (d*9);
+          return d;
+        })
+      .attr("x", function(d, i){
+            return i*15;
+            })
+      .attr("y", function(d) {(200 - d*10)})
+      .style("fill", "red")
+        .style("stroke", "black")
+        .style("stroke-width", 1);
+    }
+
+
+
+
+
+
+
+
+  /* var fda = d3.select("#fun-drawing-area");
+  fda.append("circle")
+    .attr("cx", 50)
+    .attr("cy", 50)
+    .attr("r",  40)
+    .style("stroke", "red")
+    .style("stroke-width", 5)
+    .style("fill", "yellow");
+   d3.select("svg")
+    .selectAll("rect")
+    .data(animaldata)
+    .enter()
+    .append("rect")
+    .style("fill", "#FE9922")
+    .attr("width", 30)
+      .attr("height", function(d){
+      var d= d*4;
+      //console.log(d);
+      return d;
+      })
+      .style("opacity", (d,i) => i*.15)
+    .attr("x", (d,i)=> i*30)
+    .attr("y", d => 400-4*d);
+*/
+    var theData = [ 1, 8, 3 ]
+
+var p = d3.select("body").selectAll("p")
+  .data(theData)
+  .enter()
+  .append("p")
+  .text("hello ");
+
+  </script>
+  <style>
+
+  </style>
+</html>
