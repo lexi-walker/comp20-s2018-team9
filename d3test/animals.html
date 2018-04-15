@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+       <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body>
+    <svg width="910" height="200"> </svg>
+      <!-- <svg width="200" height="200" id="fun-drawing-area">
+    </svg> -->
+<h1> hii</h1>
+  </body>
+
+  <script>
+
+      var animalstorage = [];
+      var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
+        for (var i = 1; i < data.length; i++) {
+         animalstorage.push(data[i].FIELD3);
+        }
+        dataViz(animalstorage);
+      });
+    function dataViz(data) {
+      d3.select("svg")
+      .selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("width", "10")
+      .attr("height", function (d) {
+          d= (d*9);
+          return d;
+        })
+      .attr("x", function(d, i){
+            return i*14.7;
+            })
+      .attr("y", function(d) {return (198 - d*9)})
+      .style("fill", "red")
+      .style("stroke", "black")
+      .style("stroke-width", 1);
+    }
+
+
+
+
+
+
+    var theData = [ 1, 8, 3 ];
+
+    var p = d3.select("body").selectAll("p")
+      .data(theData)
+      .enter()
+      .append("p")
+      .text("hello ");
+
+  </script>
+
+</html>

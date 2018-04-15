@@ -1,0 +1,297 @@
+[
+ {
+   "FIELD1": "Species",
+   "FIELD2": "SleepTime",
+   "FIELD3": "Awake Time"
+ },
+ {
+   "FIELD1": "African elephant",
+   "FIELD2": "3.3",
+   "FIELD3": "20.7"
+ },
+ {
+   "FIELD1": "African giant pouched rat",
+   "FIELD2": "8.3",
+   "FIELD3": "15.7"
+ },
+ {
+   "FIELD1": "Arctic Fox",
+   "FIELD2": "12.5",
+   "FIELD3": "11.5"
+ },
+ {
+   "FIELD1": "Arctic ground squirrel",
+   "FIELD2": "16.5",
+   "FIELD3": "7.5"
+ },
+ {
+   "FIELD1": "Asian elephant",
+   "FIELD2": "3.9",
+   "FIELD3": "20.1"
+ },
+ {
+   "FIELD1": "Baboon",
+   "FIELD2": "9.8",
+   "FIELD3": "14.2"
+ },
+ {
+   "FIELD1": "Big brown bat",
+   "FIELD2": "19.7",
+   "FIELD3": "4.3"
+ },
+ {
+   "FIELD1": "Brazilian tapir",
+   "FIELD2": "6.2",
+   "FIELD3": "17.8"
+ },
+ {
+   "FIELD1": "Cat",
+   "FIELD2": "14.5",
+   "FIELD3": "9.5"
+ },
+ {
+   "FIELD1": "Chimpanzee",
+   "FIELD2": "9.7",
+   "FIELD3": "14.3"
+ },
+ {
+   "FIELD1": "Chinchilla",
+   "FIELD2": "12.5",
+   "FIELD3": "11.5"
+ },
+ {
+   "FIELD1": "Cow",
+   "FIELD2": "3.9",
+   "FIELD3": "20.1"
+ },
+ {
+   "FIELD1": "Desert hedgehog",
+   "FIELD2": "10.3",
+   "FIELD3": "13.7"
+ },
+ {
+   "FIELD1": "Donkey",
+   "FIELD2": "3.1",
+   "FIELD3": "20.9"
+ },
+ {
+   "FIELD1": "Eastern American mole",
+   "FIELD2": "8.4",
+   "FIELD3": "15.6"
+ },
+ {
+   "FIELD1": "Echidna",
+   "FIELD2": "8.6",
+   "FIELD3": "15.4"
+ },
+ {
+   "FIELD1": "European hedgehog",
+   "FIELD2": "10.7",
+   "FIELD3": "13.3"
+ },
+ {
+   "FIELD1": "Galago",
+   "FIELD2": "10.7",
+   "FIELD3": "13.3"
+ },
+ {
+   "FIELD1": "Genet",
+   "FIELD2": "6.1",
+   "FIELD3": "17.9"
+ },
+ {
+   "FIELD1": "Giant armadillo",
+   "FIELD2": "18.1",
+   "FIELD3": "5.9"
+ },
+ {
+   "FIELD1": "Goat",
+   "FIELD2": "3.8",
+   "FIELD3": "20.2"
+ },
+ {
+   "FIELD1": "Golden hamster",
+   "FIELD2": "14.4",
+   "FIELD3": "9.6"
+ },
+ {
+   "FIELD1": "Gorilla",
+   "FIELD2": "12",
+   "FIELD3": "12"
+ },
+ {
+   "FIELD1": "Gray seal",
+   "FIELD2": "6.2",
+   "FIELD3": "17.8"
+ },
+ {
+   "FIELD1": "Gray wolf",
+   "FIELD2": "13",
+   "FIELD3": "11"
+ },
+ {
+   "FIELD1": "Ground squirrel",
+   "FIELD2": "13.8",
+   "FIELD3": "10.2"
+ },
+ {
+   "FIELD1": "Guinea pig",
+   "FIELD2": "8.2",
+   "FIELD3": "15.8"
+ },
+ {
+   "FIELD1": "Horse",
+   "FIELD2": "2.9",
+   "FIELD3": "21.1"
+ },
+ {
+   "FIELD1": "Jaguar",
+   "FIELD2": "10.8",
+   "FIELD3": "13.2"
+ },
+ {
+   "FIELD1": "Lesser short-tailed shrew",
+   "FIELD2": "9.1",
+   "FIELD3": "14.9"
+ },
+ {
+   "FIELD1": "Little brown bat",
+   "FIELD2": "19.9",
+   "FIELD3": "4.1"
+ },
+ {
+   "FIELD1": "Man",
+   "FIELD2": "8",
+   "FIELD3": "16"
+ },
+ {
+   "FIELD1": "Mole rat",
+   "FIELD2": "10.6",
+   "FIELD3": "13.4"
+ },
+ {
+   "FIELD1": "Mountain beaver",
+   "FIELD2": "11.2",
+   "FIELD3": "12.8"
+ },
+ {
+   "FIELD1": "Mouse",
+   "FIELD2": "13.2",
+   "FIELD3": "10.8"
+ },
+ {
+   "FIELD1": "Musk shrew",
+   "FIELD2": "12.8",
+   "FIELD3": "11.2"
+ },
+ {
+   "FIELD1": "N. American opossum",
+   "FIELD2": "19.4",
+   "FIELD3": "4.6"
+ },
+ {
+   "FIELD1": "Nine-banded armadillo",
+   "FIELD2": "17.4",
+   "FIELD3": "6.6"
+ },
+ {
+   "FIELD1": "Owl monkey",
+   "FIELD2": "17",
+   "FIELD3": "7"
+ },
+ {
+   "FIELD1": "Patas monkey",
+   "FIELD2": "10.9",
+   "FIELD3": "13.1"
+ },
+ {
+   "FIELD1": "Phanlanger",
+   "FIELD2": "13.7",
+   "FIELD3": "10.3"
+ },
+ {
+   "FIELD1": "Pig",
+   "FIELD2": "8.4",
+   "FIELD3": "15.6"
+ },
+ {
+   "FIELD1": "Rabbit",
+   "FIELD2": "8.4",
+   "FIELD3": "15.6"
+ },
+ {
+   "FIELD1": "Raccoon",
+   "FIELD2": "12.5",
+   "FIELD3": "11.5"
+ },
+ {
+   "FIELD1": "Rat",
+   "FIELD2": "13.2",
+   "FIELD3": "10.8"
+ },
+ {
+   "FIELD1": "Red fox",
+   "FIELD2": "9.8",
+   "FIELD3": "14.2"
+ },
+ {
+   "FIELD1": "Rhesus monkey",
+   "FIELD2": "9.6",
+   "FIELD3": "14.4"
+ },
+ {
+   "FIELD1": "Rock hyrax (Hetero. b)",
+   "FIELD2": "6.6",
+   "FIELD3": "17.4"
+ },
+ {
+   "FIELD1": "Rock hyrax (Procavia hab)",
+   "FIELD2": "5.4",
+   "FIELD3": "18.6"
+ },
+ {
+   "FIELD1": "Roe deer",
+   "FIELD2": "2.6",
+   "FIELD3": "21.4"
+ },
+ {
+   "FIELD1": "Sheep",
+   "FIELD2": "3.8",
+   "FIELD3": "20.2"
+ },
+ {
+   "FIELD1": "Slow loris",
+   "FIELD2": "11",
+   "FIELD3": "13"
+ },
+ {
+   "FIELD1": "Star nosed mole",
+   "FIELD2": "10.3",
+   "FIELD3": "13.7"
+ },
+ {
+   "FIELD1": "Tenrec",
+   "FIELD2": "13.3",
+   "FIELD3": "10.7"
+ },
+ {
+   "FIELD1": "Tree hyrax",
+   "FIELD2": "5.4",
+   "FIELD3": "18.6"
+ },
+ {
+   "FIELD1": "Tree shrew",
+   "FIELD2": "15.8",
+   "FIELD3": "8.2"
+ },
+ {
+   "FIELD1": "Vervet",
+   "FIELD2": "10.3",
+   "FIELD3": "13.7"
+ },
+ {
+   "FIELD1": "Water opossum",
+   "FIELD2": "19.4",
+   "FIELD3": "4.6"
+ }
+]

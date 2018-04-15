@@ -14,3 +14,7 @@
 * Work on formatting the data pulled from Google Calendar so that it can be fed into the visualizations.
 * Make more of the simple, basic visualizations.
 * Keep exploring the creation of a heatmap with Google Maps API.
+
+# Comments by Ming
+* "parsing the google calendar data (such as converting the location strings to coordinates) into usable data have to be solved." => Ho boy, don't aim for perfection.
+* "a recusive system to process the list locations one-by-one, due to the callback functions used by the request-response model." => ew.  Definitely a royal pain to do with Node.js, I would do this using Python + Flask. 

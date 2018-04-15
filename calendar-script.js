@@ -32,7 +32,7 @@ var CLIENT_ID = '149020516136-fakiuatlt3r0te6n4lk02lqafe0l7pis.apps.googleuserco
      if (isSignedIn) {
        authorizeButton.style.display = 'none';
        signoutButton.style.display = 'block';
-       console.log("change state");
+       listUpcomingEvents();
      } else {
        authorizeButton.style.display = 'block';
        signoutButton.style.display = 'none';
@@ -54,14 +54,20 @@ var CLIENT_ID = '149020516136-fakiuatlt3r0te6n4lk02lqafe0l7pis.apps.googleuserco
 }
 
 function listUpcomingEvents() {
+  var datemin = new Date();
+  datemin.setDate(datemin.getDate() - 8);
+  var datemax = new Date();
+  datemax.setDate(datemax.getDate() + 3);
   gapi.client.calendar.events.list({
     'calendarId': 'primary',
-    'timeMin': (new Date()).toISOString(),
+    'timeMin': (datemin).toISOString(),
+    'timeMax': (datemax).toISOString(),
     'showDeleted': false,
     'singleEvents': true,
     'maxResults': 10,
     'orderBy': 'startTime'
   }).then(function(response) {
+          console.log(response);
     var events = response.result.items;
     console.log(response);
     appendPre('Upcoming events:');
