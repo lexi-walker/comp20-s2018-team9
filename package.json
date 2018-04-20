@@ -1,0 +1,24 @@
+{
+  "name": "life_map",
+  "version": "1.0.0",
+  "description": "Map out your Google Calendar activity to discover more about your lifestyle!",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuftsdev/comp20-s2018-team9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuftsdev/comp20-s2018-team9/issues"
+  },
+  "homepage": "https://github.com/tuftsdev/comp20-s2018-team9#readme"
+}
