@@ -9,11 +9,12 @@
         <link rel="stylesheet" media="screen and (max-device-width: 799px)" href="style/mobile/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 
-		<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXyzKlmSZKd_R3le8xjYbtvO236NS5L2w"></script>
+		<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXyzKlmSZKd_R3le8xjYbtvO236NS5L2w&libraries=visualization"></script>
 	</head>
 	<body>
 
 		<h1> Life Map</h1>
+
         <div id="leftmenu">
             <button id="authorize-button">Authorize</button>
             <button id="signout-button">Sign Out</button>
@@ -24,22 +25,22 @@
     		<script src="calendar-script.js" type="text/javascript"></script>
     		<script async defer src="https://apis.google.com/js/api.js"
           			onload="this.onload=function(){};handleClientLoad()"
-          			onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+          			onreadystatechange="if (this.readyState === 'complete') this.onload()"></script> 
 
         </div>
 		<div id="map"></div>
-
 
 		<!-- Map !-->
 		<script src="map-script.js"></script>
 		<script type="text/javascript">
 			initMap();
 
+			var scale = 10;
 
 			var locations = [
-			  "Tufts Hill Hall",
-			  "Tufts Dewick",
-			  "Tufts Halligan Hall"
+			  {place:"Tufts Hill Hall",time:50*scale},
+			  {place:"Tufts Dewick",time:20*scale},
+			  {place:"Tufts Halligan Hall",time:100*scale}
 			];
 
 			getCoords(locations);
