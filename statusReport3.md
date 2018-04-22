@@ -13,3 +13,8 @@
 * Front-end needs to have a lot of work done.
 * Need to implement a back-end server to store past data and host visualizations.
 * Need to tie all of the visualizations to the data from Google calendar rather than random data.
+
+
+# Comments by Ming
+* "Fully functioning heat map" => this sounds like an ongoing problem.
+* What's more important: front end or back end?  Seems like front-end should be the focus for this project?
