@@ -57,8 +57,6 @@ function listUpcomingEvents() {
           document.getElementById("get-events").addEventListener("click", function(){
                 date1 = new Date(document.getElementById("date1").value);
                 date2 = new Date(document.getElementById("date2").value);
-                console.log(date1);
-                console.log(date2);
                 gapi.client.calendar.events.list({
                           'calendarId': 'primary',
                           'timeMin': (date1).toISOString(),
