@@ -72,6 +72,12 @@ function listUpcomingEvents() {
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
+                                              var eventdata = {
+                                                      "time": event.start.dateTime,
+                                                      "summary": event.summary,
+                                                      "location": event.location
+                                              };
+                                              console.log(eventdata);
                                               var when = event.start.dateTime;
                                               if (!when) {
                                                       when = event.start.date;
