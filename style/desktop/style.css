@@ -48,6 +48,11 @@ h1 {
     margin: 10px 10px 10px 0px;
 }
 
+#authorize-button:hover, #signout-button:hover, #get-events:hover {
+    background-color: green;
+    color: white;
+}
+
 #signout-button {
     margin: 10px 10px 10px 0px;
 } 
