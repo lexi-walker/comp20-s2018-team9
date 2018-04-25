@@ -68,16 +68,17 @@ function listUpcomingEvents() {
                 }).then(function(response) {
                           var events = response.result.items;
                           appendPre('Upcoming events:');
-
+                          var eventdata = [];
+                          var sleeptimes = [];
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
-                                              var eventdata = {
+                                              eventdata.push({
                                                       "time": event.start.dateTime,
+                                                      "endtime": event.end.dateTime,
                                                       "summary": event.summary,
                                                       "location": event.location
-                                              };
-                                              console.log(eventdata);
+                                              });
                                               var when = event.start.dateTime;
                                               if (!when) {
                                                       when = event.start.date;
@@ -87,6 +88,15 @@ function listUpcomingEvents() {
                           } else {
                                   appendPre('No upcoming events found.');
                           }
+                          console.log(eventdata);
+                          for (j = 0; j < eventdata.length - 1; j++) {
+                                  time1 = (new Date(eventdata[j].endtime)).getDate();
+                                  time2 = (new Date(eventdata[j].endtime)).getTime();
+                                  if ((new Date(eventdata[j+1].time)).getDate() == time1 + 1) {
+                                                  sleeptimes.push((new Date(eventdata[j+1].time)).getTime() - time2);
+                                          }
+                          }
+                          console.log(sleeptimes);
                 });
           });
 }
