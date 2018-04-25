@@ -1,11 +1,14 @@
 body {
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Alfa Slab One', sans-serif;
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 40px;
 	text-align: center;
-	margin: 10px 0 5px 0;
+	margin: 10px 0px 5px 0px;
+    padding-top: 0px;
+    padding: 5px;
+    background-color: #c1ebb0;
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 1px;
@@ -14,6 +17,11 @@ h1 {
 #leftmenu {
     float: left;
     width: 200px;
+    background-color: #c1ebb0;
+    padding: 2%;
+    border-radius: 10px;
+    max-width: 200px;
+    height: auto;
 }
 
 #map {
@@ -21,9 +29,29 @@ h1 {
 	width: auto;
     margin-left: 200px;
     margin-right: 200px;
+    border-color: slategrey;
+    border-radius: 10px;
+    
 }
 
 #vismenu {
     float: left;
     width: 200px;
+}
+
+/*#choosedates {*/
+/*    padding: 10px;*/
+}
+
+#authorize-button {
+    padding: 2%;
+    margin: 10px 10px 10px 0px;
+}
+
+#signout-button {
+    margin: 10px 10px 10px 0px;
+} 
+
+#date1, #date2, #date, #get-events {
+    margin: 10px 10px 10px 0px;
 }
