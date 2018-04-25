@@ -57,8 +57,6 @@ function listUpcomingEvents() {
           document.getElementById("get-events").addEventListener("click", function(){
                 date1 = new Date(document.getElementById("date1").value);
                 date2 = new Date(document.getElementById("date2").value);
-                console.log(date1);
-                console.log(date2);
                 gapi.client.calendar.events.list({
                           'calendarId': 'primary',
                           'timeMin': (date1).toISOString(),
@@ -70,10 +68,17 @@ function listUpcomingEvents() {
                 }).then(function(response) {
                           var events = response.result.items;
                           appendPre('Upcoming events:');
-
+                          var eventdata = [];
+                          var sleeptimes = [];
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
+                                              eventdata.push({
+                                                      "time": event.start.dateTime,
+                                                      "endtime": event.end.dateTime,
+                                                      "summary": event.summary,
+                                                      "location": event.location
+                                              });
                                               var when = event.start.dateTime;
                                               if (!when) {
                                                       when = event.start.date;
@@ -83,6 +88,15 @@ function listUpcomingEvents() {
                           } else {
                                   appendPre('No upcoming events found.');
                           }
+                          console.log(eventdata);
+                          for (j = 0; j < eventdata.length - 1; j++) {
+                                  time1 = (new Date(eventdata[j].endtime)).getDate();
+                                  time2 = (new Date(eventdata[j].endtime)).getTime();
+                                  if ((new Date(eventdata[j+1].time)).getDate() == time1 + 1) {
+                                                  sleeptimes.push((new Date(eventdata[j+1].time)).getTime() - time2);
+                                          }
+                          }
+                          console.log(sleeptimes);
                 });
           });
 }

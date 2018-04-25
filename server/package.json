@@ -1,0 +1,12 @@
+{
+        "name": "simpleexpress",
+        "version": "0.0.1",
+        "dependencies": {
+                "body-parser": "latest",
+                "cors": "^2.8.4",
+                "express": "latest",
+                "mongo": "^0.1.0",
+                "mongodb": "^2.2.33",
+                "validator": "latest"
+        }
+}
