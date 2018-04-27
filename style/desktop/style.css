@@ -59,11 +59,10 @@ h2, .about h3 {
 
 #leftmenu {
     float: left;
-    width: 200px;
     background-color: #c1ebb0;
     padding: 2%;
     border-radius: 10px;
-    max-width: 200px;
+    max-width: 18%;
     height: auto;
 }
 
@@ -157,7 +156,6 @@ h2 {
 }
 
 
-/* Center website */
 .main {
     max-width: 1000px;
     margin: auto;
@@ -177,7 +175,7 @@ h1 {
 /* Add padding BETWEEN each column */
 .row,
 .row > .column {
-    padding: 8px;
+    padding: 3px;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -211,4 +209,5 @@ h1 {
     .column {
         width: 100%;
     }
+    
 }
