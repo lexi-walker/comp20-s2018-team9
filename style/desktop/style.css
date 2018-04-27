@@ -111,6 +111,13 @@ h2, .about h3 {
 	font-size: 60px;
 }
 
+iframe {
+	background-color: white;
+	margin: 0 auto;
+	height: 400px;
+	width: 800px;
+}
+
 #map {
 	height: 90vh;
 	width: auto;
