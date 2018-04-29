@@ -15,9 +15,6 @@ h1 {
 	font-family: 'Alfa Slab One';
 }
 
-h2 {
-
-}
 
 .about p {
 	font-family: sans-serif;
@@ -64,25 +61,35 @@ h2, .about h3 {
 	border-radius: 10px;
 	max-width: 18%;
 	height: auto;
+	overflow-y: hidden;
 }
 
 #rightmenu {
+	float: right;
 	position: absolute;
-	top: 20%;
+	top: 30%;
 	right: 0;
 	background-color: red;
-	padding: 2%;
+	padding: 10px;
 	width: 190px;
-	height: 100vh;
 }
+
+.contentwrap {
+	background-color: aqua;
+	/*overflow-y:hidden; */
+}
+
 .button {
 	font-family: sans-serif;
+	color: white;
 	text-align: center;
 	border-radius: 10px;
 	border-width: 1.5px;
 	border-style: solid;
-	padding: 5px;
+	padding: 10px 5px;
 	border-color: white;
+	margin: 10px 0;
+
 }
 .overlay {
 	height: 100%;
@@ -98,11 +105,21 @@ h2, .about h3 {
 }
 .overlay-content {
 	position: relative;
-	top: 10%;
 	width: 75%;
 	text-align: left;;
-	margin-top: 30px;
+	margin-top: 10%;
 	margin-left: 10%;
+}
+
+.overlay-content h1, .overlay-content h2 {
+	font-size: 15px;
+	text-align: left;
+	color: white;
+	background-color: transparent;
+	margin: 0;
+	padding-left: 0;
+	font-family: sans-serif;
+
 }
 .overlay .closebtn {
 	position: absolute;
@@ -114,9 +131,10 @@ h2, .about h3 {
 iframe {
 	background-color: white;
 	margin: 0 auto;
-	height: 400px;
-	width: 800px;
+	height: 450px;
+	width: 80vw;
 }
+
 
 #map {
 	height: 90vh;
@@ -155,7 +173,6 @@ iframe {
 	margin: 10px 10px 10px 0px;
 }
 
-
 #nav ul {
 	list-style-type: none;
 	margin: 0;
@@ -183,7 +200,6 @@ iframe {
 	text-decoration: none;
 }
 
-
 #nav a:hover {
 	background-color: black;
 }
@@ -206,7 +222,6 @@ h2 {
 * {
 	box-sizing: border-box;
 }
-
 
 .main {
 	max-width: 1000px;
@@ -249,10 +264,24 @@ h1 {
 	padding: 10px;
 }
 
+/* Responsive layout - just so that heatmap buttons stay correctly */
+@media screen and (max-width: 1200px) {
+
+
+	#rightmenu {
+		top: 27%;
+		background-color: green;
+	}
+
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 900px) {
 	.column {
 		width: 50%;
+	}
+	#rightmenu {
+		top: 22%
 	}
 }
 
@@ -262,4 +291,9 @@ h1 {
 		width: 100%;
 	}
 
+	#rightmenu {
+		top: 18%
+	}
+
 }
+
