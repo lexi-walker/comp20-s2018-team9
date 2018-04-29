@@ -76,7 +76,7 @@ function listUpcomingEvents() {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
                                               eventdata.push({
-                                                      "username": event.creator.email;
+                                                      "username": event.creator.email,
                                                       "time": event.start.dateTime,
                                                       "endtime": event.end.dateTime,
                                                       "summary": event.summary,
