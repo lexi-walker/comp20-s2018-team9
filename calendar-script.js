@@ -5,6 +5,8 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
+var sleeptimes = [];
+var eventdata = [];
 var authorizeButton = document.getElementById('authorize-button');
    var signoutButton = document.getElementById('signout-button');
 
@@ -68,12 +70,13 @@ function listUpcomingEvents() {
                 }).then(function(response) {
                           var events = response.result.items;
                           appendPre('Upcoming events:');
-                          var eventdata = [];
-                          var sleeptimes = [];
+                          //var eventdata = [];
+                          //var sleeptimes = [];
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
                                               eventdata.push({
+                                                      "username": event.creator.email;
                                                       "time": event.start.dateTime,
                                                       "endtime": event.end.dateTime,
                                                       "summary": event.summary,
