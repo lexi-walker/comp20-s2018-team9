@@ -69,19 +69,15 @@ h2, .about h3 {
 	position: absolute;
 	top: 30%;
 	right: 0;
-	background-color: red;
 	padding: 10px;
 	width: 190px;
 }
 
-.contentwrap {
-	background-color: aqua;
-	/*overflow-y:hidden; */
-}
+
 
 .button {
-	font-family: sans-serif;
-	color: white;
+	font-family: 'Alfa Slab One';
+	color: black;
 	text-align: center;
 	border-radius: 10px;
 	border-width: 1.5px;
@@ -89,6 +85,7 @@ h2, .about h3 {
 	padding: 10px 5px;
 	border-color: white;
 	margin: 10px 0;
+	background-color: #c1ebb0;
 
 }
 .overlay {
@@ -98,7 +95,6 @@ h2, .about h3 {
 	z-index: 100;
 	top: 0;
 	left: 0;
-	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0, 0.9);
 	overflow-x: hidden;
 	transition: 0.5s;
@@ -270,7 +266,7 @@ h1 {
 
 	#rightmenu {
 		top: 27%;
-		background-color: green;
+
 	}
 
 }
