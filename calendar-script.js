@@ -87,6 +87,27 @@ function listUpcomingEvents() {
                                                       when = event.start.date;
                                               }
                                               appendPre(event.summary + ' (' + when + ')');
+
+
+
+                                              var request = new XMLHttpRequest();
+
+                                              request.open("POST", "https://lifemap20.herokuapp.com/storedata", true);
+                                              request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                              request.onreadystatechange = function() {
+                                                  //doesnt necessarily guarantee that data will be sent or that the request will be successful
+                                                  if (request.readyState == 4 && request.status != 200) {
+                                                      var resp = request.responseText;
+                                                      //display "theString" on frontend?
+                                                  }
+                                              };
+                                              params = "username=" + event.creator.email
+                                                        + "&time=" + event.start.dateTime
+                                                        + "&endtime=" + event.end.dateTime
+                                                        + "&summary=" + event.summary
+                                                        + "&location=" + event.location;
+                                              request.send(params);
+
                                     }
                           } else {
                                   appendPre('No upcoming events found.');
