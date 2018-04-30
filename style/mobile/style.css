@@ -6,9 +6,69 @@ h1 {
 	font-size: 30px;
 	text-align: center;
 	margin: 10px 0 5px 0;
+    margin: 10px 0px 5px 0px;
+	padding-top: 0px;
+	padding: 5px;
+	background-color: #c1ebb0;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	border-bottom-width: 1px;
+	font-family: 'Alfa Slab One';
 }
+
+/*#leftmenu {
+    width: auto;
+
+}*/
 
 #map {
 	height: 100vh;
 	width: 100vw;
+}
+
+.image {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    padding-bottom: 0px;
+
+}
+
+.header {
+    background-color: darkseagreen;
+}
+
+#nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	text-align:center;
+	font-family: 'Alfa Slab One';
+}
+
+#nav li {
+/*    float: left;*/
+	display: inline-block;
+	text-align: center;
+}
+
+#nav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#nav a:hover {
+	background-color: black;
+}
+
+#nav a:active {
+	color: darkseagreen;
 }
