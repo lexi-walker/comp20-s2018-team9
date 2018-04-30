@@ -1,53 +1,69 @@
 <!doctype html>
 <html>
-  <head>
-	   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <head >
+	 <script src="https://d3js.org/d3.v3.min.js"></script>
   </head>
-  <body>
-	<svg id="firstOne" width="910" height="200"> </svg>
-	  <!-- <svg width="200" height="200" id="fun-drawing-area">
-	</svg> -->
-<h1> hidi</h1>
+  <body >
+  <svg width="910" height="400"> </svg>
+
   </body>
 
+  <script >
 
 
-  <script>
+	var animalstorage = [];
+	var animalnames = [];
+	var marginright = 50;
+	var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
+	for (var i = 1; i < data.length; i++) {
+	 animalstorage.push(data[i].FIELD3);
+	animalnames.push(data[i].FIELD1);
 
-	  var animalstorage = [];
-	  var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
-		  console.log(data);
-		for (var i = 1; i < data.length; i++) {
-		  animalstorage.push(data[i].FIELD3);
-		}
-		  console.log(animaldata);
-		dataViz(animalstorage);
-	  });
-	function dataViz(data) {
-	  d3.select("svg")
-	  .selectAll("rect")
-	  .data(data)
-	  .enter()
-	  .append("rect")
-	  .attr("width", "10")
-	  .attr("height", function (d) {
-		  d= (d*9);
-		  return d;
-		})
-	  .attr("x", function(d, i){
-			return i*14.7;
-			})
-	  .attr("y", function(d) {return (198 - d*9)})
-	  .style("fill", "blue")
-	  .style("stroke", "black")
-	  .style("stroke-width", 1);
 	}
 
+		dataViz(animalstorage ,animalnames);
+	});
+  function dataViz(data, names) {
+	  //console.log(names);
+	d3.select("svg")
+	.selectAll("rect")
+	.data(data)
+	.enter()
+	.append("rect")
+	.attr("width", "10")
+	.attr("height", function (d) {
+	  d= (d*9);
+	  return d;
+	})
+	.attr("x", function(d, i){
+	  return (marginright + i*14.7);
+	  })
+	.attr("y", function(d) {return (198 - d*9)})
+	.style("fill", "red")
+	.style("stroke", "black")
+	.style("stroke-width", 1);
 
+	  yscale = d3.scale.linear().range([0, 197]).domain([20,0]);
+	  xscale = d3.scale.ordinal().range([0,860]).domain([0,10]);;
+
+			xAxis = d3.svg.axis()
+				.scale(xscale);
+
+			yAxis = d3.svg.axis()
+				.scale(yscale)
+				.orient("left");
+
+	  d3.select("svg").append("g")
+				.attr("transform", "translate(40,5)")
+				.call(yAxis);
+			d3.select("svg").append("g")
+				.attr("transform", "translate(40,200)")
+				.call(xAxis);
+
+ }
 
 
 
   </script>
-
 
 </html>

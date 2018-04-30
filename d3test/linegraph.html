@@ -25,9 +25,9 @@
 
 			//domain = defines max and min
 			//range = area available to plot stuff in
-			xscale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([2000,2010]);
+			xscale = d3.scale.linear().range([400]).domain([2000,2010]);
 
-			yscale = d3.scale.linear().range([HEIGHT -MARGINS.top, MARGINS.bottom]).domain([134,2015]);
+			yscale = d3.scale.linear().range([800]).domain([134,2015]);
 
 			xAxis = d3.svg.axis()
 				.scale(xscale),
@@ -45,6 +45,9 @@
 			setup.append("svg:g")
 				.attr("transform", "translate(50,0)")
 				.call(yAxis);
+
+
+
 
 
 		</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	   <script src="https://d3js.org/d3.v4.min.js"></script>
+	  <title> All About d3</title>
+  </head>
+  <body>
+	<svg id="first" width="400" height="400"></svg>
+	<svg id="second" width="400" height="400"></svg>
+
+
+	<script>
+
+
+	  d3.select("#first")
+		.append("circle")
+		.attr("r", 25)
+		.attr("cx", 50)
+		.attr("cy", 50)
+		.style("fill", "red");
+
+
+	/*var theData = [ 1, 8, 3 ];
+	d3.select("#second")
+	  .selectAll("circle")
+	  .data(theData)
+	  .enter()
+	  .append("circle")
+	  .attr("r", 25)
+	  .attr("cx", function(d) {
+		return (20+ d*15);
+	  })
+	  .attr("cy", function(d) {
+		return (20 + d*20);
+	  })
+	  .style("fill", "purple")
+	  .style("stroke", "yellow")
+	  .style("stroke-width","2px"); */
+
+	</script>
+  </body>
+
+</html>

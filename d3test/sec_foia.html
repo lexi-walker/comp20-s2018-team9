@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+	   <script src="https://d3js.org/d3.v4.min.js"></script>
+	<title> FOIA Heatmap</title>
+  </head>
+  <body>
+	  <svg width="910" height="400"> </svg>
+
+	  <script>
+		  var rdate = "2016-08-16T00:00:00";
+		  rdate = new Date(rdate);
+		  var csvfilename = "SEC-FOIALog-2016.csv";
+
+		  d3.csv(csvfilename, function(data) {
+			//console.log(data);
+			heatMap(data);
+		  });
+
+		  //use this csv to create another csv with format DayofWeek, WeekofDate, numberofrequests
+
+		  function heatMap(data) {
+			var holdingArray = [];
+			for (var i = 0; i < 100; i++) {
+			  var parsedDate = new Date(data[i].requested_date);
+			  holdingArray.push(parsedDate);
+			}
+			var mm = holdingArray[0].getDay();
+			weekOf(holdingArray, 0);
+
+
+		  }
+		  function whatDay(data, num) {
+			  var days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+			  var dayofweek = days[data[num].getDay() - 1];
+			  return dayofweek;
+		  }
+
+		  function weekOf(data, num) {
+			  var day = data[0].getDate();
+			  var count = 0
+			  while (day != 0) {
+				  var difference = 7 - day;
+			  }
+			  var returnString = 'Week of' + 'month' + 'monday date' + 'year';
+
+
+		  }
+
+		  function foiaRequests {
+
+		  }
+
+		  //https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array#20798567
+
+	</script>
+
+  </body>
+
+
+</html>
