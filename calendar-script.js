@@ -69,14 +69,15 @@ function listUpcomingEvents() {
                           'orderBy': 'startTime'
                 }).then(function(response) {
                           var events = response.result.items;
-                          appendPre('Upcoming events:');
+                          var pre = document.getElementById('content');
+                          pre.innerHTML = '';
                           //var eventdata = [];
                           //var sleeptimes = [];
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
                                               eventdata.push({
-                                                      "username": event.creator.email;
+                                                      "username": event.creator.email,
                                                       "time": event.start.dateTime,
                                                       "endtime": event.end.dateTime,
                                                       "summary": event.summary,
