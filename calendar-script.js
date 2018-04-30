@@ -69,7 +69,8 @@ function listUpcomingEvents() {
                           'orderBy': 'startTime'
                 }).then(function(response) {
                           var events = response.result.items;
-                          appendPre('Upcoming events:');
+                          var pre = document.getElementById('content');
+                          pre.innerHTML = '';
                           //var eventdata = [];
                           //var sleeptimes = [];
                           if (events.length > 0) {
