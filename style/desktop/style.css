@@ -133,7 +133,7 @@ iframe {
 
 
 #map {
-	height: 90vh;
+    height: calc(100vh - 220px);
 	width: auto;
 	margin-left: 200px;
 	margin-right: 200px;
@@ -292,4 +292,3 @@ h1 {
 	}
 
 }
-
