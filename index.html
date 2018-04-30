@@ -44,6 +44,34 @@
 
 			</div>
             <!-- <div id="map"></div> -->
+            <div id="map">
+
+
+                <!-- Map !-->
+                <script src="map-script.js"></script>
+                <script type="text/javascript">
+                    initMap();
+
+
+                    var locations = [
+                      "Tufts Hill Hall",
+                      "Tufts Dewick",
+                      "Tufts Halligan Hall"
+                    ];
+
+                    getCoords(locations);
+                </script>
+
+                    <!-- Sign in authoriztion for the calendar !-->
+
+                    <button id="authorize-button" style="display: none;">Authorize</button>
+                    <button id="signout-button" style="display: none;">Sign Out</button>
+                    <pre id="content"></pre>
+                    <script src="calendar-script.js" type="text/javascript"></script>
+                    <script async defer src="https://apis.google.com/js/api.js"
+                              onload="this.onload=function(){};handleClientLoad()"
+                              onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+            </div>
 			<div id="rightmenu">
 				<div class="button" onclick="openNav('graph1')"> Hourly Heatmap </div>
 				<div class="overlay" id="graph1">
@@ -131,34 +159,7 @@
 					  onload="this.onload=function(){};handleClientLoad()"
 					  onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
-		<div id="map">
 
-
-			<!-- Map !-->
-			<script src="map-script.js"></script>
-			<script type="text/javascript">
-				initMap();
-
-
-				var locations = [
-				  "Tufts Hill Hall",
-				  "Tufts Dewick",
-				  "Tufts Halligan Hall"
-				];
-
-				getCoords(locations);
-			</script>
-
-				<!-- Sign in authoriztion for the calendar !-->
-
-				<button id="authorize-button" style="display: none;">Authorize</button>
-				<button id="signout-button" style="display: none;">Sign Out</button>
-				<pre id="content"></pre>
-				<script src="calendar-script.js" type="text/javascript"></script>
-				<script async defer src="https://apis.google.com/js/api.js"
-						  onload="this.onload=function(){};handleClientLoad()"
-						  onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
-			</div>
 	</body>
 
 
