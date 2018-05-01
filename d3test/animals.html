@@ -24,7 +24,7 @@
 	var marginright = 50;
 	var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
 		for (var i = 1; i < data.length -11; i++) {
-			animalstorage.push(data[i].FIELD3);
+			animalstorage.push(data[i].FIELD2);
 			animalnames.push(data[i].FIELD1);
 		}
 		animalnames[47] = 'You';
