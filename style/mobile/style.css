@@ -1,5 +1,6 @@
 body {
 	font-family: 'Nanum Gothic', sans-serif;
+    background-color: dimgrey;
 }
 
 h1 {
@@ -113,6 +114,7 @@ h1 {
 	max-width: 70%;
 	margin: auto;
 	line-height: 20px;
+    color: white;
 }
 
 .content h3 {
