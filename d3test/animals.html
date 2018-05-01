@@ -3,8 +3,16 @@
   <head >
 	 <script src="https://d3js.org/d3.v3.min.js"></script>
   </head>
-  <body >
-  <svg width="910" height="400"> </svg>
+  <body>
+	  <div class="spacer"></div>
+	  <svg width="910" height="400"> </svg>
+	  <style>
+		  .spacer {
+			  height: 50px;
+		  }
+	  </style>
+
+
 
   </body>
 
@@ -15,16 +23,14 @@
 	var animalnames = [];
 	var marginright = 50;
 	var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
-	for (var i = 1; i < data.length; i++) {
-	 animalstorage.push(data[i].FIELD3);
-	animalnames.push(data[i].FIELD1);
-
-	}
-
+		for (var i = 1; i < data.length -10; i++) {
+			animalstorage.push(data[i].FIELD3);
+			animalnames.push(data[i].FIELD1);
+		}
 		dataViz(animalstorage ,animalnames);
 	});
   function dataViz(data, names) {
-	  //console.log(names);
+	console.log(names);
 	d3.select("svg")
 	.selectAll("rect")
 	.data(data)
@@ -36,30 +42,37 @@
 	  return d;
 	})
 	.attr("x", function(d, i){
-	  return (marginright + i*14.7);
+	  return (marginright + i*16);
 	  })
 	.attr("y", function(d) {return (198 - d*9)})
 	.style("fill", "red")
 	.style("stroke", "black")
 	.style("stroke-width", 1);
 
-	  yscale = d3.scale.linear().range([0, 197]).domain([20,0]);
-	  xscale = d3.scale.ordinal().range([0,860]).domain([0,10]);;
+	 yscale = d3.scale.linear().range([0, 197]).domain([20,0]);
+	 xscale = d3.scale.ordinal().range([0,860]);
 
-			xAxis = d3.svg.axis()
+	 xAxis = d3.svg.axis()
 				.scale(xscale);
 
-			yAxis = d3.svg.axis()
+	 yAxis = d3.svg.axis()
 				.scale(yscale)
 				.orient("left");
 
-	  d3.select("svg").append("g")
+	 d3.select("svg").append("g")
 				.attr("transform", "translate(40,5)")
 				.call(yAxis);
-			d3.select("svg").append("g")
-				.attr("transform", "translate(40,200)")
-				.call(xAxis);
 
+	  for(var i = 0; i < names.length ;i++){
+	  d3.select("svg").append("g")
+				.attr("transform", "translate(40,200)")
+				.call(xAxis)
+				.append("text")
+				.attr("y", -10 + (-16*i))
+				.attr("x", 20)
+				.text(names[i])
+				 .attr("transform",function(d){return "rotate(90)"});
+	  }
  }
 
 

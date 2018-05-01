@@ -142,11 +142,18 @@ h6 {
 	transition: 0.5s;
 }
 .overlay-content {
+	width: 110%;
 	position: relative;
-	width: 75%;
 	text-align: left;;
 	margin-top: 10%;
 	margin-left: 10%;
+}
+.overlay-content h1 {
+	font-family: 'Alfa Slab One', sans-serif;
+}
+
+.overlay-content h2 {
+	font-family: 'Open Sans', sans-serif;
 }
 
 .overlay-content h1, .overlay-content h2 {
@@ -156,7 +163,6 @@ h6 {
 	background-color: transparent;
 	margin: 0;
 	padding-left: 0;
-	font-family: sans-serif;
 
 }
 .overlay .closebtn {
@@ -171,11 +177,20 @@ iframe {
 	margin: 0 auto;
 	height: 450px;
 	width: 80vw;
+
+
+}
+
+#hourlyHeatmap {
+	margin-left: 20%;
+	height: 800px;
+	width: 600px;
+	margin-right:20%;
 }
 
 
 #map {
-    height: calc(100vh - 220px);
+	height: calc(100vh - 220px);
 	width: auto;
 	margin-left: 200px;
 	margin-right: 200px;
@@ -208,12 +223,12 @@ iframe {
 }
 
 #date1, #date2, #date, #get-events {
-    margin: 10px 10px 10px 0px;
-    min-width: 150px;
+	margin: 10px 10px 10px 0px;
+	min-width: 150px;
 }
 
 #date1, #date2 {
-    max-width: 160px;
+	max-width: 160px;
 	margin: 10px 10px 10px 0px;
 }
 
@@ -245,7 +260,7 @@ iframe {
 }
 
 #nav a:hover {
-    cursor: pointer;
+	cursor: pointer;
 	background-color: black;
     color: #c1ebb0;
 }
@@ -329,16 +344,32 @@ h1 {
 	#rightmenu {
 		top: 22%
 	}
+	#hourlyHeatmap {
+		margin-left: 10%;
+	}
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
+	iframe {
+		width: 800px;
+		 -ms-zoom: 0.60;
+		-moz-transform: scale(0.60);
+		-moz-transform-origin: 0 0;
+		-o-transform: scale(0.60);
+		-o-transform-origin: 0 0;
+		-webkit-transform: scale(0.60);
+		-webkit-transform-origin: 0 0;
+	}
 	.column {
 		width: 100%;
 	}
 
 	#rightmenu {
 		top: 18%
+	}
+	#hourlyHeatmap {
+		margin-left: 0;
 	}
 
 }
