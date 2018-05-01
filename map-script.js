@@ -52,10 +52,10 @@ function getCoords(locations){
     map: lifemap,
     radius: 25,
     gradient: [
-      'rgba(0, 255, 255, 0)',
-      'rgba(0, 255, 255, 1)',
-      'rgba(0, 191, 255, 1)',
-      'rgba(0, 127, 255, 1)',
+      'rgba(255, 255, 255, 0)',
+      'rgba(193, 235, 176, 1)',
+      'rgba(144, 177, 144, 1)',
+      'rgba(33, 109, 185, 1)',
       'rgba(0, 63, 255, 1)',
       'rgba(0, 0, 255, 1)',
       'rgba(0, 0, 223, 1)',
@@ -64,8 +64,8 @@ function getCoords(locations){
       'rgba(0, 0, 127, 1)',
       'rgba(63, 0, 91, 1)',
       'rgba(127, 0, 63, 1)',
-      'rgba(191, 0, 31, 1)',
-      'rgba(255, 0, 0, 1)'
+      'rgba(199, 20, 109, 1)',
+      'rgba(255, 0, 147, 1)'
     ]
   });
 }
