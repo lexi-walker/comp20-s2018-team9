@@ -22,18 +22,24 @@
                 stroke: #000;
                 shape-rendering: crispEdges;
             }
+
+            .legend {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 60%;
+            }
         </style>
     </head>
     <body>
         <svg class="chart"></svg>
         <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.7.0/d3-legend.min.js"></script>
 
         <script>
             // Initial data
-            var sleepData = [{day: "Monday",    hours: 6},  {day: "Tuesday",  hours: 4},
-                             {day: "Wednesday", hours: 7},  {day: "Thursday", hours: 5},
-                             {day: "Friday",    hours: 8},  {day: "Saturday", hours: 10},
-                             {day: "Sunday",    hours: 7}];
+            var sleepData = [{Global: "Monday",    Weekly: 6},  {Global: "Tuesday",  Weekly: 4},
+                             {Global: "Wednesday", Weekly: 7},  {Global: "Thursday", Weekly: 5},
+                             {Global: "Friday",    Weekly: 8},  {Global: "Saturday", Weekly: 10},
+                             {Global: "Sunday",    Weekly: 7}];
 
              var weekdays = sleepData.map(function(t) {return t.day});
 
@@ -65,8 +71,8 @@
               .append("g")
                 .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
-            dayScale.domain(sleepData.map(function(d) {return d.day;}));
-            hourScale.domain([0, d3.max(sleepData, function(d) {return d.hours})]);
+            dayScale.domain(sleepData.map(function(d) {return d.Global;}));
+            hourScale.domain([0, d3.max(sleepData, function(d) {return d.Weekly})]);
 
             chart.append("g")
                 .attr("class", "x axis")
@@ -81,18 +87,67 @@
                 .data(sleepData)
               .enter().append("rect")
                 .attr("class", "bar")
-                .attr("x", function(d) {return dayScale(d.day)})
-                .attr("y", function(d) {return hourScale(d.hours)})
-                .attr("height", function(d) {return height - hourScale(d.hours)})
+                .attr("x", function(d) {return dayScale(d.Global)})
+                .attr("y", function(d) {return hourScale(d.Weekly)})
+                .attr("height", function(d) {return height - hourScale(d.Weekly)})
                 .attr("width", dayScale.rangeBand());
 
-            // Adding a horizontal average line
+            // Adding a horizontal global average line
             chart.append("line")
-                .style("stroke", "black")
+                .style("stroke", "orange")
+                .style("stroke-width", "7")
+                .style("line-height", "200%")
                 .attr("x1", 0)
                 .attr("y1", hourScale(4.7))
                 .attr("x2", width)
                 .attr("y2", hourScale(4.7));
+
+            // Adding a horizontal local average line
+            chart.append("line")
+                .style("stroke", "lime")
+                .style("stroke-width", "7")
+                .style("line-height", "200%")
+                .attr("x1", 0)
+                .attr("y1", hourScale(5.8))
+                .attr("x2", width)
+                .attr("y2", hourScale(5.8));
+
+            // Code to create legend
+            var z = d3.scale.ordinal()
+                .range(["orange", "lime"]); // Legend colors
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width + margins.left + margins.right)
+                .attr("height", height + margins.top + margins.bottom);
+
+            var g = svg.append("g")
+                .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+
+
+            var options = d3.keys(sleepData[0]).filter(function(key) { return key !== "date"; }).reverse();
+                var legend = svg.selectAll(".legend")
+                                .data(options.slice().filter(function(type){ return type != "total"}))
+                                .enter().append("g")
+                                .attr("class", "legend")
+                                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+                legend.append("rect")
+                      .attr("x", width - 330)
+                      .attr("y", 348)
+                      .attr("width", 18)
+                      .attr("height", 18)
+                      .style("fill", z);
+
+                function capitalizeFirstLetter(string) {
+                    return string.charAt(0).toUpperCase() + string.slice(1);
+                }
+
+                legend.append("text")
+                      .attr("x", width - 336)
+                      .attr("y", 355)
+                      .attr("dy", ".35em")
+                      .style("text-anchor", "end")
+                      .text(function(d) { return d;});
 
 
         </script>

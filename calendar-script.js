@@ -5,6 +5,8 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
+var sleeptimes = [];
+var eventdata = [];
 var authorizeButton = document.getElementById('authorize-button');
    var signoutButton = document.getElementById('signout-button');
 
@@ -67,13 +69,15 @@ function listUpcomingEvents() {
                           'orderBy': 'startTime'
                 }).then(function(response) {
                           var events = response.result.items;
-                          appendPre('Upcoming events:');
-                          var eventdata = [];
-                          var sleeptimes = [];
+                          var pre = document.getElementById('content');
+                          pre.innerHTML = '';
+                          //var eventdata = [];
+                          //var sleeptimes = [];
                           if (events.length > 0) {
                                     for (i = 0; i < events.length; i++) {
                                               var event = events[i];
                                               eventdata.push({
+                                                      "username": event.creator.email,
                                                       "time": event.start.dateTime,
                                                       "endtime": event.end.dateTime,
                                                       "summary": event.summary,
@@ -84,6 +88,27 @@ function listUpcomingEvents() {
                                                       when = event.start.date;
                                               }
                                               appendPre(event.summary + ' (' + when + ')');
+
+
+
+                                              var request = new XMLHttpRequest();
+
+                                              request.open("POST", "https://lifemap20.herokuapp.com/storedata", true);
+                                              request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                              request.onreadystatechange = function() {
+                                                  //doesnt necessarily guarantee that data will be sent or that the request will be successful
+                                                  if (request.readyState == 4 && request.status != 200) {
+                                                      var resp = request.responseText;
+                                                      //display "theString" on frontend?
+                                                  }
+                                              };
+                                              params = "username=" + event.creator.email
+                                                        + "&time=" + event.start.dateTime
+                                                        + "&endtime=" + event.end.dateTime
+                                                        + "&summary=" + event.summary
+                                                        + "&location=" + event.location;
+                                              request.send(params);
+
                                     }
                           } else {
                                   appendPre('No upcoming events found.');

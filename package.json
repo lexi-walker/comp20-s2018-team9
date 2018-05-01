@@ -4,14 +4,9 @@
   "description": "Map out your Google Calendar activity to discover more about your lifestyle!",
   "main": "index.html",
   "dependencies": {
-<<<<<<< HEAD
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.3.1"
-=======
     "bootstrap": "^4.1.0",
     "jquery": "^3.3.1",
     "node-static": "^0.7.10"
->>>>>>> d220144356d8f7fbe4a30d971fca4b9696af52e1
   },
   "devDependencies": {},
   "scripts": {
