@@ -1,5 +1,6 @@
 body {
 	font-family: 'Open Sans';
+    background-color: dimgrey;
 }
 
 h1 {
@@ -21,6 +22,7 @@ h1 {
 	max-width: 70%;
 	margin: auto;
 	line-height: 20px;
+    color: white;
 }
 
 .content h3 {
@@ -34,7 +36,7 @@ h2, .about h3 {
 	max-width: 70%;
 	margin: auto;
 	padding: 20px 0px 10px 0px;
-	color: darkseagreen;
+	color: #c1ebb0;
 	font-size: 130%;
 	font-family: 'Alfa Slab One';
 }
@@ -57,11 +59,15 @@ h2, .about h3 {
 #leftmenu {
 	float: left;
 	background-color: #c1ebb0;
-	padding: 2%;
+	padding: 10px;
+    margin: 10px;
 	border-radius: 10px;
-	max-width: 18%;
+	max-width: 190px;
 	height: auto;
 	overflow-y: hidden;
+    border-width: 1.5px;
+	border-style: solid;
+    border-color: white;
 }
 
 #rightmenu {
@@ -72,8 +78,6 @@ h2, .about h3 {
 	padding: 10px;
 	width: 190px;
 }
-
-
 
 .button {
 	font-family: 'Alfa Slab One';
@@ -86,8 +90,14 @@ h2, .about h3 {
 	border-color: white;
 	margin: 10px 0;
 	background-color: #c1ebb0;
-
 }
+
+.button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: green;
+}
+
 .overlay {
 	height: 100%;
 	width: 0;
@@ -205,6 +215,7 @@ iframe {
 #nav a:hover {
     cursor: pointer;
 	background-color: black;
+    color: #c1ebb0;
 }
 
 #nav a:active {
