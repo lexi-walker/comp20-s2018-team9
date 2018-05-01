@@ -14,7 +14,7 @@
 		<link rel="stylesheet" media="screen and (max-device-width: 799px)" href="style/mobile/cssreset.css"/>
 		<link rel="stylesheet" media="screen and (max-device-width: 799px)" href="style/mobile/style.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-		<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXyzKlmSZKd_R3le8xjYbtvO236NS5L2w"></script>
+		<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXyzKlmSZKd_R3le8xjYbtvO236NS5L2w&libraries=visualization"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -37,59 +37,53 @@
 			<input id="date1" type = "date"> to <input id="date2" type = "date">
 			<button id= "get-events">Get Events</button>
 				<pre id="content"></pre>
+				<script src="map-script.js"></script>
 				<script src="calendar-script.js" type="text/javascript"></script>
 				<script async defer src="https://apis.google.com/js/api.js"
 						  onload="this.onload=function(){};handleClientLoad()"
 						  onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
 			</div>
-			<!-- <div id="map"></div> -->
+
 			<div id="map">
-
-
-				<!-- Map !-->
-				<script src="map-script.js"></script>
 				<script type="text/javascript">
-					initMap();
-
-
-					var locations = [
-					  "Tufts Hill Hall",
-					  "Tufts Dewick",
-					  "Tufts Halligan Hall"
-					];
-
-					getCoords(locations);
-				</script>
-
-
+					window.onload = function(){
+						initMap();
+					}
+				</script>>
 			</div>
 			<div id="rightmenu">
 				<div class="button" onclick="openNav('graph1')"> Hourly Heatmap </div>
 				<div class="overlay" id="graph1">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph1')">&times;</a>
 						<div class="overlay-content">
-							<h1> PiHole HeatMap Breakdown</h1>
-							<h2> short description</h2>
+							<h1> Internet Usage Breakdown</h1>
+							<h2> This is a breakdown of the amount of internet activity you've had over the last week.
+                                Using Pi-hole, we compiled the number of requests sent from your browser, and displayed that data
+                                in a heatmap blocked by the hour. </h2>
 							<iframe src="d3test/hourlyHeatmap.html"> </iframe>
 					</div>
 				</div>
-				<div class="button" onclick="openNav('graph2')"> Interactive Bar Graph </div>
+				<div class="button" onclick="openNav('graph2')"> Interactive Sleep Bar Graph </div>
 				<div class="overlay" id="graph2">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph2')">&times;</a>
 						<div class="overlay-content">
-							<h1> Second n</h1>
-							<h2> short description</h2>
+							<h1> Interactive Sleep Bar Graph</h1>
+							<h2> This bar graph depicts how much sleep you've received in the past week.
+                                The 'weekly' bar shows the average for the past week, and the 'global' bar
+                                shows the average for the total time period you selected. </h2>
 							<iframe id="hourlyHeatmap" src="d3test/bargraph.html"> </iframe>
 
 					</div>
 				</div>
-				<div class="button" onclick="openNav('graph3')"> Animal Sleeptimes </div>
+				<div class="button" onclick="openNav('graph3')"> Which Animal Are You? </div>
 				<div class="overlay" id="graph3">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph3')">&times;</a>
 						<div class="overlay-content">
-							<h1> Second n</h1>
-							<h2> short description</h2>
+							<h1> Animal Sleeptime Analysis</h1>
+							<h2> This is a bar graph representation of the time spent sleeping per day for a
+                            variety of animals. We compare the amount of time you've collectively spent sleeping
+                            to that of these animals and assign you an animal counterpart!</h2>
 							<iframe src="d3test/animals.html"> </iframe>
 					</div>
 				</div>
@@ -97,21 +91,11 @@
 				<div class="overlay" id="graph4">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph4')">&times;</a>
 						<div class="overlay-content">
-							<h1> Comparing Awake to Asleep Times</h1>
-							<h2> The following pie chart displaus the amount of time you've spent asleep versus awake during the time period you specified.</h2>
+							<h1> Comparing Time Awake vs. Time Asleep</h1>
+							<h2> The following pie chart displays the ratio of time you've spent asleep versus awake during the time period you specified.</h2>
 							<iframe  src="d3test/awakeasleepPie.html"> </iframe>
 					</div>
 				</div>
-				<div class="button" onclick="openNav('graph5')"> Busy:Free </div>
-				<div class="overlay" id="graph5">
-						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph5')">&times;</a>
-						<div class="overlay-content">
-							<h1> Second n</h1>
-							<h2> short description</h2>
-							<iframe  src="d3test/jub"> </iframe>
-					</div>
-				</div>
-
 			</div>
 		</div>
 
@@ -125,24 +109,6 @@
 			}
 
 		</script>
-
-		<!-- Map !-->
-		<script src="map-script.js"></script>
-		<script type="text/javascript">
-			initMap();
-
-			var scale = 10;
-
-			var locations = [
-			  {place:"Tufts Hill Hall",time:50*scale},
-			  {place:"Tufts Dewick",time:20*scale},
-			  {place:"Tufts Halligan Hall",time:100*scale}
-			];
-
-			getCoords(locations);
-		</script>
-
-
 
 	</body>
 
