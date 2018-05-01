@@ -8,11 +8,6 @@ function initMap(){
   geocoder = new google.maps.Geocoder();
 }
 
-function plotMap(latlngs) {
-
-
-}
-
 //<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXyzKlmSZKd_R3le8xjYbtvO236NS5L2w"></script>
 var delay = 50;
 

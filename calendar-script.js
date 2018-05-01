@@ -123,7 +123,7 @@ function listUpcomingEvents() {
                                           }
                           }
                           console.log(sleeptimes);
-                          initMap();
+                          //initMap();
                           var scale = 1;
                           for (var i = 0; i < eventdata.length; i++){
                                   locations.push({
