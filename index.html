@@ -43,35 +43,35 @@
 						  onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
 			</div>
-            <!-- <div id="map"></div> -->
-            <div id="map">
+			<!-- <div id="map"></div> -->
+			<div id="map">
 
 
-                <!-- Map !-->
-                <script src="map-script.js"></script>
-                <script type="text/javascript">
-                    initMap();
+				<!-- Map !-->
+				<script src="map-script.js"></script>
+				<script type="text/javascript">
+					initMap();
 
 
-                    var locations = [
-                      "Tufts Hill Hall",
-                      "Tufts Dewick",
-                      "Tufts Halligan Hall"
-                    ];
+					var locations = [
+					  "Tufts Hill Hall",
+					  "Tufts Dewick",
+					  "Tufts Halligan Hall"
+					];
 
-                    getCoords(locations);
-                </script>
+					getCoords(locations);
+				</script>
 
-                    <!-- Sign in authoriztion for the calendar !-->
+					<!-- Sign in authoriztion for the calendar !-->
 
-                    <button id="authorize-button" style="display: none;">Authorize</button>
-                    <button id="signout-button" style="display: none;">Sign Out</button>
-                    <pre id="content"></pre>
-                    <script src="calendar-script.js" type="text/javascript"></script>
-                    <script async defer src="https://apis.google.com/js/api.js"
-                              onload="this.onload=function(){};handleClientLoad()"
-                              onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
-            </div>
+					<button id="authorize-button" style="display: none;">Authorize</button>
+					<button id="signout-button" style="display: none;">Sign Out</button>
+					<pre id="content"></pre>
+					<script src="calendar-script.js" type="text/javascript"></script>
+					<script async defer src="https://apis.google.com/js/api.js"
+							  onload="this.onload=function(){};handleClientLoad()"
+							  onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+			</div>
 			<div id="rightmenu">
 				<div class="button" onclick="openNav('graph1')"> Hourly Heatmap </div>
 				<div class="overlay" id="graph1">
@@ -79,7 +79,7 @@
 						<div class="overlay-content">
 							<h1> PiHole HeatMap Breakdown</h1>
 							<h2> short description</h2>
-							<iframe id="hourlyHeatmap" src="d3test/hourlyHeatmap.html"> </iframe>
+							<iframe src="d3test/hourlyHeatmap.html"> </iframe>
 					</div>
 				</div>
 				<div class="button" onclick="openNav('graph2')"> Interactive Bar Graph </div>
@@ -89,6 +89,7 @@
 							<h1> Second n</h1>
 							<h2> short description</h2>
 							<iframe id="hourlyHeatmap" src="d3test/bargraph.html"> </iframe>
+
 					</div>
 				</div>
 				<div class="button" onclick="openNav('graph3')"> Animal Sleeptimes </div>
@@ -97,16 +98,16 @@
 						<div class="overlay-content">
 							<h1> Second n</h1>
 							<h2> short description</h2>
-							<iframe id="hourlyHeatmap" src="d3test/animals.html"> </iframe>
+							<iframe src="d3test/animals.html"> </iframe>
 					</div>
 				</div>
 				<div class="button" onclick="openNav('graph4')"> Awake:Asleep </div>
 				<div class="overlay" id="graph4">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav('graph4')">&times;</a>
 						<div class="overlay-content">
-							<h1> Second n</h1>
-							<h2> short description</h2>
-							<iframe id="hourlyHeatmap" src="d3test/jub"> </iframe>
+							<h1> Comparing Awake to Asleep Times</h1>
+							<h2> The following pie chart displaus the amount of time you've spent asleep versus awake during the time period you specified.</h2>
+							<iframe  src="d3test/awakeasleepPie.html"> </iframe>
 					</div>
 				</div>
 				<div class="button" onclick="openNav('graph5')"> Busy:Free </div>
@@ -115,7 +116,7 @@
 						<div class="overlay-content">
 							<h1> Second n</h1>
 							<h2> short description</h2>
-							<iframe id="hourlyHeatmap" src="d3test/jub"> </iframe>
+							<iframe  src="d3test/jub"> </iframe>
 					</div>
 				</div>
 
