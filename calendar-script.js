@@ -66,7 +66,7 @@ function listUpcomingEvents() {
                           'timeMax': (date2).toISOString(),
                           'showDeleted': false,
                           'singleEvents': true,
-                          'maxResults': 10,
+                          'maxResults': 50,
                           'orderBy': 'startTime'
                 }).then(function(response) {
                           var events = response.result.items;
