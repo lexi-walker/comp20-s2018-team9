@@ -7,6 +7,7 @@ var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
 var sleeptimes = [];
 var eventdata = [];
+var locations =[];
 var authorizeButton = document.getElementById('authorize-button');
    var signoutButton = document.getElementById('signout-button');
 
@@ -122,6 +123,16 @@ function listUpcomingEvents() {
                                           }
                           }
                           console.log(sleeptimes);
+                          initMap();
+                          var scale = 1;
+                          for (var i = 0; i < eventdata.length; i++){
+                                  locations.push({
+                                                "place":eventdata[i].location,
+                                                "time": 1 * scale
+                                        });
+                          }
+                          console.log(locations);
+                          getCoords(locations);
                 });
           });
 }
