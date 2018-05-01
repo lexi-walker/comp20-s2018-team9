@@ -16,7 +16,6 @@ h1 {
 	font-family: 'Alfa Slab One';
 }
 
-
 .about p {
 	font-family: sans-serif;
 	max-width: 70%;
@@ -53,7 +52,40 @@ h2, .about h3 {
 	height: auto;
 	display: block;
 	margin: auto;
+}
 
+.mingimg {
+    display: none;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ming {
+    display: block;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+}
+
+h6 {
+    font-size: 14px;
+    color: grey;
+    margin: auto;
+    text-align: center;
+}
+
+.hover-text:hover ~ .mingimg {
+    display: block; 
+    color: white;
+}
+
+.hover-text:hover {
+    color: white;  
+    cursor: pointer;
+    
 }
 
 #leftmenu {
@@ -68,7 +100,7 @@ h2, .about h3 {
     border-width: 1.5px;
 	border-style: solid;
     border-color: white;
-}
+}                                      
 
 #rightmenu {
 	float: right;
