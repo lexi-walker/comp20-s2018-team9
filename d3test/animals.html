@@ -23,10 +23,11 @@
 	var animalnames = [];
 	var marginright = 50;
 	var animaldata = d3.json("./simplified_animalsleep.json", function(error, data) {
-		for (var i = 1; i < data.length -10; i++) {
-			animalstorage.push(data[i].FIELD3);
+		for (var i = 1; i < data.length -11; i++) {
+			animalstorage.push(data[i].FIELD2);
 			animalnames.push(data[i].FIELD1);
 		}
+		animalnames[47] = 'You';
 		dataViz(animalstorage ,animalnames);
 	});
   function dataViz(data, names) {
@@ -64,7 +65,7 @@
 				.call(yAxis);
 
 	  for(var i = 0; i < names.length ;i++){
-	  d3.select("svg").append("g")
+		  d3.select("svg").append("g")
 				.attr("transform", "translate(40,200)")
 				.call(xAxis)
 				.append("text")
@@ -73,6 +74,19 @@
 				.text(names[i])
 				 .attr("transform",function(d){return "rotate(90)"});
 	  }
+
+	  var manheight = 90;
+	  d3.select("svg").append('rect')
+				 .attr("height",manheight)
+				 .attr("width","14")
+				  .attr("x","804")
+				  .attr("y", 198 - manheight)
+				 .style ("fill","blue")
+				 .style("stroke","black")
+				 .style("stroke-width", "1");
+
+
+
  }
 
 

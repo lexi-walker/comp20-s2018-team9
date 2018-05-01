@@ -1,6 +1,6 @@
 body {
 	font-family: 'Open Sans';
-    background-color: dimgrey;
+	background-color: dimgrey;
 }
 
 h1 {
@@ -21,7 +21,7 @@ h1 {
 	max-width: 70%;
 	margin: auto;
 	line-height: 20px;
-    color: white;
+	color: white;
 }
 
 .content h3 {
@@ -55,52 +55,59 @@ h2, .about h3 {
 }
 
 .mingimg {
-    display: none;
-    margin: auto;
-    height: auto;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
+	display: none;
+	margin: auto;
+	height: auto;
+	width: 100%;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .ming {
-    display: block;
-    text-align: center;
-    width: 20%;
-    margin: auto;
+	display: block;
+	text-align: center;
+	width: 20%;
+	margin: auto;
 }
 
 h6 {
-    font-size: 14px;
-    color: grey;
-    margin: auto;
-    text-align: center;
+	font-size: 14px;
+	color: grey;
+	margin: auto;
+	text-align: center;
 }
 
 .hover-text:hover ~ .mingimg {
-    display: block; 
-    color: white;
+	display: block;
+	color: white;
 }
 
 .hover-text:hover {
-    color: white;  
-    cursor: pointer;
-    
+	color: white;
+	cursor: pointer;
+
 }
 
 #leftmenu {
 	float: left;
 	background-color: #c1ebb0;
 	padding: 10px;
-    margin: 10px;
+	margin: 10px;
 	border-radius: 10px;
-	max-width: 190px;
+	max-width: 230px;
 	height: auto;
 	overflow-y: hidden;
-    border-width: 1.5px;
+	border-width: 1.5px;
 	border-style: solid;
-    border-color: white;
-}                                      
+	border-color: white;
+}
+
+#content {
+    padding-left: 5px;
+    font-size: 12px;
+    line-height: 1.5;
+
+}
 
 #rightmenu {
 	float: right;
@@ -125,9 +132,9 @@ h6 {
 }
 
 .button:hover {
-    color: white;
-    cursor: pointer;
-    background-color: green;
+	color: white;
+	cursor: pointer;
+	background-color: green;
 }
 
 .overlay {
@@ -170,6 +177,10 @@ h6 {
 	top: 20px;
 	right: 45px;
 	font-size: 60px;
+}
+
+.closebtn {
+	z-index: 30;
 }
 
 iframe {
@@ -262,7 +273,7 @@ iframe {
 #nav a:hover {
 	cursor: pointer;
 	background-color: black;
-    color: #c1ebb0;
+	color: #c1ebb0;
 }
 
 #nav a:active {
