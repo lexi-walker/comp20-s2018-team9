@@ -24,7 +24,7 @@
 		dataViz(animalstorage ,animalnames);
 	});
   function dataViz(data, names) {
-	  //console.log(names);
+	console.log(names);
 	d3.select("svg")
 	.selectAll("rect")
 	.data(data)
@@ -43,22 +43,30 @@
 	.style("stroke", "black")
 	.style("stroke-width", 1);
 
-	  yscale = d3.scale.linear().range([0, 197]).domain([20,0]);
-	  xscale = d3.scale.ordinal().range([0,860]).domain([0,10]);;
+	 yscale = d3.scale.linear().range([0, 197]).domain([20,0]);
+	 xscale = d3.scale.ordinal().range([0,860]).domain([names]);;
 
-			xAxis = d3.svg.axis()
+	 xAxis = d3.svg.axis()
 				.scale(xscale);
 
-			yAxis = d3.svg.axis()
+	 yAxis = d3.svg.axis()
 				.scale(yscale)
 				.orient("left");
 
-	  d3.select("svg").append("g")
+	 d3.select("svg").append("g")
 				.attr("transform", "translate(40,5)")
 				.call(yAxis);
-			d3.select("svg").append("g")
+	 d3.select("svg").append("g")
 				.attr("transform", "translate(40,200)")
-				.call(xAxis);
+				.call(xAxis)
+	  .selectAll('text')
+				.attr('font-weight', 'normal')
+				.style("text-anchor", "start")
+				.attr("dx", ".8em")
+				.attr("dy", ".5em")
+				.attr("transform", function (d) {
+					return "rotate(-65)";
+				});
 
  }
 
