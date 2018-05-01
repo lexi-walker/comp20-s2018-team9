@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,25 +6,36 @@
 	<title>Step 1 - A Basic Pie Chart</title>
   </head>
   <body>
+	  <div class="spacer"></div>
 	<div id="chart"></div>
+	  <style>
+		  div {
+			  width: 300px;
+			  margin: 0 auto;
+		  }
+
+		  .spacer {
+			  height: 50px;
+		  }
+
+	  </style>
+
 	 <script src="https://d3js.org/d3.v4.min.js"></script>
 	<script>
 	  (function(d3) {
 		'use strict';
 
 		var dataset = [
-		  { label: 'Abulia', count: 10 },
-		  { label: 'Betelgeuse', count: 20 },
-		  { label: 'Cantaloupe', count: 30 },
-		  { label: 'Dijkstra', count: 40 }
+		  { label: 'Awake', count: 10 },
+		  { label: 'Asleep', count: 20 },
 		];
 
-		var width = 300;
+		var width = 400;
 		var height = 300;
 		var radius = Math.min(width, height) / 2;
 
 		var color = d3.scaleOrdinal()
-					.range(['#A60F2B','#528C18']);
+					.range(['#00004d','#ffcc00']);
 
 		var svg = d3.select('#chart')
 		  .append('svg')
@@ -49,6 +61,28 @@
 		  .attr('fill', function(d) {
 			return color(d.data.label);
 		  });
+
+		d3.select('svg').append('rect')
+						.attr('height', "20")
+						.attr('width', '20')
+						.attr('x', 0)
+						.attr('y', 15)
+						.style('fill', '#00004d');
+		 d3.select('svg').append('rect')
+						.attr('height', "20")
+						.attr('width', '20')
+						.attr('x', 0)
+						.attr('y', 45)
+						.style('fill', '#ffcc00');
+
+		 d3.select('svg').append('text')
+						.attr('x', 30)
+						.attr('y', 30)
+						.text('sleeping');
+		  d3.select('svg').append('text')
+						.attr('x', 30)
+						.attr('y', 60)
+						.text('awake');
 
 	  })(window.d3);
 	</script>

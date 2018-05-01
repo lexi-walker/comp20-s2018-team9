@@ -1,3 +1,6 @@
+var decoded = [];
+
+
 function initMap(){
 
   lifemap = new google.maps.Map(document.getElementById('map'), {
@@ -14,29 +17,8 @@ var delay = 50;
 function plotNext(iter, locations) {
   geocoder.geocode({'address':locations[iter].place}, function (results,status){
     if (status == google.maps.GeocoderStatus.OK) {
-      var pos = results[0].geometry.location;
 
-      heatmap = new google.maps.visualization.HeatmapLayer({
-        data: [{location: new google.maps.LatLng(pos.lat(), pos.lng()), weight:locations[iter].time}],
-        map: lifemap,
-        radius: 20,
-        gradient: [
-          'rgba(0, 255, 255, 0)',
-          'rgba(0, 255, 255, 1)',
-          'rgba(0, 191, 255, 1)',
-          'rgba(0, 127, 255, 1)',
-          'rgba(0, 63, 255, 1)',
-          'rgba(0, 0, 255, 1)',
-          'rgba(0, 0, 223, 1)',
-          'rgba(0, 0, 191, 1)',
-          'rgba(0, 0, 159, 1)',
-          'rgba(0, 0, 127, 1)',
-          'rgba(63, 0, 91, 1)',
-          'rgba(127, 0, 63, 1)',
-          'rgba(191, 0, 31, 1)',
-          'rgba(255, 0, 0, 1)'
-        ]
-      });
+      decoded.push(results[0].geometry.location);
   /*
         var marker = new google.maps.Marker({
           map: lifemap,
@@ -56,8 +38,34 @@ function recurse(iter, locations) {
   if (iter < locations.length) {
     setTimeout('plotNext("'+iter+'",locations)', delay);
   }
+
+  
+
 }
 
 function getCoords(locations){
+  decoded = [];
   recurse(0, locations);
+
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: decoded,//[{location: new google.maps.LatLng(pos.lat(), pos.lng()), weight:locations[iter].time}]
+    map: lifemap,
+    radius: 25,
+    gradient: [
+      'rgba(0, 255, 255, 0)',
+      'rgba(0, 255, 255, 1)',
+      'rgba(0, 191, 255, 1)',
+      'rgba(0, 127, 255, 1)',
+      'rgba(0, 63, 255, 1)',
+      'rgba(0, 0, 255, 1)',
+      'rgba(0, 0, 223, 1)',
+      'rgba(0, 0, 191, 1)',
+      'rgba(0, 0, 159, 1)',
+      'rgba(0, 0, 127, 1)',
+      'rgba(63, 0, 91, 1)',
+      'rgba(127, 0, 63, 1)',
+      'rgba(191, 0, 31, 1)',
+      'rgba(255, 0, 0, 1)'
+    ]
+  });
 }

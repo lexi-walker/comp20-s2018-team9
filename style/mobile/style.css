@@ -322,3 +322,8 @@ h1 {
 	background-color: lightgray;
 	padding: 10px;
 }
+
+.ming {
+    visibility: hidden;
+    display: none;
+}
